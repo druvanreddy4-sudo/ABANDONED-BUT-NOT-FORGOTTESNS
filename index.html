@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abandoned But Not Forgotten</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="stars"></canvas>
+
+<nav>
+  <a href="#home" class="brand">ABF</a>
+  <a href="#explore">Explore</a>
+  <a href="#discover">Discover</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#about">About</a>
+</nav>
+
+<header id="home" class="hero">
+  <div class="moon" aria-hidden="true"></div>
+  <h1>ABANDONED<br>BUT NOT FORGOTTEN</h1>
+  <p>An interactive digital museum of the machines humanity left behind on the Moon and Mars.</p>
+  <a class="btn" href="#explore">Explore the Forgotten</a>
+</header>
+
+<section id="explore">
+  <h2>Explore</h2>
+  <div class="tabs">
+    <button class="tab active" data-planet="Moon">🌑 Moon</button>
+    <button class="tab" data-planet="Mars">🔴 Mars</button>
+  </div>
+  <div id="map"></div>
+  <p class="note">Pins marked "approximate" show the general landing area, not a surveyed position. Click a pin to open its story.</p>
+</section>
+
+<section id="discover">
+  <h2>Discover</h2>
+  <input id="search" type="search" placeholder="Search objects, missions, locations…">
+  <div id="cards" class="cards"></div>
+</section>
+
+<section id="timeline">
+  <h2>Mission Timeline</h2>
+  <ol id="timeline-list"></ol>
+</section>
+
+<section id="about">
+  <h2>About &amp; Preservation</h2>
+  <p><strong>Digital space archaeology.</strong> Hardware left on other worlds is cultural heritage as well as debris. Landing sites hold the earliest evidence of human presence beyond Earth, and future missions should plan their routes and landings so they do not disturb them.</p>
+  <p><strong>Data &amp; attribution.</strong> Images come live from the NASA Image and Video Library (images.nasa.gov). Base maps come from NASA Solar System Treks (trek.nasa.gov), built on Lunar Reconnaissance Orbiter and Viking imagery. Mission facts are summarized from NASA mission records.</p>
+  <p><strong>Facts vs. narration.</strong> Mission facts are historical. The narration voice and chapter framing are creative storytelling. Map positions are labelled confirmed or approximate.</p>
+  <p><strong>AI disclosure.</strong> This project was built with the help of an AI assistant (Claude by Anthropic), as permitted by the challenge rules.</p>
+</section>
+
+<aside id="panel" class="panel hidden" aria-live="polite">
+  <button id="close" aria-label="Close">×</button>
+  <img id="p-img" alt="">
+  <p id="p-credit" class="credit"></p>
+  <h3 id="p-name"></h3>
+  <p id="p-meta" class="meta"></p>
+  <p id="p-conf" class="conf"></p>
+  <button id="narrate" class="btn small">▶ Play narration</button>
+  <div class="chapter"><span>Chapter 01 · The Beginning</span><p id="p-c1"></p></div>
+  <div class="chapter"><span>Chapter 02 · The Mission</span><p id="p-c2"></p></div>
+  <div class="chapter"><span>Chapter 03 · The Forgotten Legacy</span><p id="p-c3"></p></div>
+  <div class="chapter"><span>Scientific importance</span><p id="p-sci"></p></div>
+</aside>
+
+<footer>Abandoned But Not Forgotten · NASA Space Apps 2026 · Data: NASA</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="data/objects.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
